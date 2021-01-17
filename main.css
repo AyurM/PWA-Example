@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("./images/background.png");
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section,
+header {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 1rem;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.menu {
+  cursor: pointer;
+  height: 1.5rem;
+  margin: 0.5rem 1rem;
+}
+
+.logo-title {
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.logo-title span {
+  color: #ffa500;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero-section img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 0;
+  left: 25%;
+}
+
+.hero-section h1 {
+  font-family: "Yeseva One", cursive;
+  font-size: clamp(2.25rem, 7vw, 3.25rem);
+  text-align: left;
+  margin: 0 1rem 1rem;
+  width: 60%;
+}
+
+h1 span {
+  color: rgb(219, 63, 180);
+}
+
+.hero-section p {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  text-align: left;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 1rem;
+  width: 50%;
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 2rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+}
+
+.popular h2 {
+  position: relative;
+  font-family: "Yeseva One", cursive;
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  text-align: center;
+  margin: 1rem;
+}
+
+.popular h2::after {
+  position: absolute;
+  content: "";
+  width: 40%;
+  height: 2px;
+  background: orange;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.recipe {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat";
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: #fafafa;
+  padding: 1rem;
+  margin: calc(50px + 1rem) 1rem 0;
+  transition: 0.3s ease;
+}
+
+.recipe:hover {
+  transform: scale(1.02);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.recipe h3 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  margin-top: 150px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.recipe-img {
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 100px);
+  height: 200px;
+  width: 200px;
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
+  transition: 0.3s ease;
+}
+
+.recipe:hover .recipe-img {
+  transform: rotate(30deg);
+}
+
+.recipe-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.calories {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.fill {
+  margin-top: auto;
+  flex: 1;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat img {
+  height: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media (min-width: 550px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-section img {
+    left: 40%;
+  }
+
+  header,
+  section {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .hero-section img {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero-section {
+    height: 70vh;
+  }
+}
