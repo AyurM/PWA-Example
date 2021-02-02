@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Простые и вкусные рецепты</title>
 </head>
 
@@ -14,6 +15,13 @@
             <img class="logo" src="./images/chef.svg" alt="Логотип">
             <p class="logo-title">ЕДИМ<span>ДОМА</span></p>
         </a>
+
+        <nav>
+            <a href="#">Популярные</a>
+            <a href="#">Категории</a>
+            <a href="#">Уроки</a>
+            <a href="#">О нас</a>
+        </nav>
 
         <img src="./images/menu.svg" alt="Меню" class="menu">
 
@@ -29,23 +37,25 @@
         <h2>Популярные рецепты</h2>
 
         <div class="recipe-grid">
-            <article class="recipe">
-                <img src="./images/recipe_04.webp" alt="Курица с печеными овощами" class="recipe-img">
-                <h3>Курица с печеными овощами</h3>
-                <p class="calories">150 ккал</p>
-                <div class="fill"></div>
-                <div class="recipe-stats">
-                    <div class="stat">
-                        <img src="./images/hourglass.svg" alt="Время приготовления">
-                        <p>50 минут</p>
-                    </div>
+            <a href="./recipe_01.html?id=1">
+                <article class="recipe">
+                    <img src="./images/recipe_04.webp" alt="Курица с печеными овощами" class="recipe-img">
+                    <h3>Курица с печеными овощами</h3>
+                    <p class="calories">150 ккал</p>
+                    <div class="fill"></div>
+                    <div class="recipe-stats">
+                        <div class="stat">
+                            <img src="./images/hourglass.svg" alt="Время приготовления">
+                            <p>50 минут</p>
+                        </div>
 
-                    <div class="stat">
-                        <img src="./images/dish.svg" alt="Количество порций">
-                        <p>4 порции</p>
+                        <div class="stat">
+                            <img src="./images/dish.svg" alt="Количество порций">
+                            <p>4 порции</p>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </a>
 
             <article class="recipe">
                 <img src="./images/recipe_02.webp" alt="Тыквенный суп-пюре" class="recipe-img">

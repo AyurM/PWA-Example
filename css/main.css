@@ -1,64 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  background: url("./images/background.png");
-}
-
-h1,
-p {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-section,
-header {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.home-link {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem 1rem;
-}
-
-.logo {
-  height: 2rem;
-}
-
-.menu {
-  cursor: pointer;
-  height: 1.5rem;
-  margin: 0.5rem 1rem;
-}
-
-.logo-title {
-  font-family: "Amatic SC", cursive;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: black;
-}
-
-.logo-title span {
-  color: #ffa500;
+  background: url("../images/background.png");
 }
 
 .hero-section {
@@ -81,7 +22,7 @@ header {
 
 .hero-section h1 {
   font-family: "Yeseva One", cursive;
-  font-size: clamp(2.25rem, 7vw, 3.25rem);
+  font-size: clamp(2.25rem, 7vw, 3rem);
   text-align: left;
   margin: 0 1rem 1rem;
   width: 60%;
@@ -133,6 +74,7 @@ h1 span {
 }
 
 .recipe {
+  cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -216,7 +158,6 @@ h1 span {
     left: 40%;
   }
 
-  header,
   section {
     padding: 0 1rem;
   }

@@ -1,0 +1,156 @@
+body {
+  background: rgb(248, 247, 245);
+  font-family: "Montserrat";
+}
+
+h2 {
+  font-family: "Yeseva One", cursive;
+}
+
+section {
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-title {
+  position: relative;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: clamp(2.5rem, 8vw, 3rem);
+  margin: 2rem 1rem 3rem;
+  text-align: left;
+}
+
+.recipe-title::before {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: orange;
+  top: calc(100% + 0.5rem);
+  left: 0;
+}
+
+.recipe-nutrition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 0 1rem;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.tags p {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: rgba(12, 83, 12, 0.7);
+  background: rgb(241, 225, 196);
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.recipe-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 1.5rem;
+}
+
+.recipe-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-stat span {
+  color: #ffa500;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.recipe-stat p {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.recipe-img-big {
+  width: 300px;
+  height: 300px;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+.ingredients ul {
+  list-style: none;
+}
+
+.ingredients ul li {
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 0.5rem;
+}
+
+.ingredients ul li::before {
+  content: "\2022";
+  color: orange;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.cooking p {
+  text-align: justify;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.cooking p:last-child {
+  margin-bottom: 0;
+}
+
+.cooking p::first-letter {
+  margin-left: 1rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: orange;
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+button:hover {
+  background: rgb(180, 118, 2);
+}
+
+.like-button {
+  margin-left: 2rem;
+}
+
+.like {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* margin: 0 0.5rem; */
+}
