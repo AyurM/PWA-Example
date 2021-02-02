@@ -88,16 +88,16 @@ section {
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2));
 }
 
-.ingredients ul {
+.ingredient-list {
   list-style: none;
 }
 
-.ingredients ul li {
+.ingredient-list li {
   color: rgba(0, 0, 0, 0.87);
   margin-bottom: 0.5rem;
 }
 
-.ingredients ul li::before {
+.ingredient-list li::before {
   content: "\2022";
   color: orange;
   font-weight: bold;
