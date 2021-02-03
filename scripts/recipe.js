@@ -1,17 +1,22 @@
 window.onload = init;
 
 function init(){
+    //извлечь id рецепта из URL
     let recipeId = window.location.search.substring(1).split("=")[1];
-    console.log(`recipe id = ${recipeId}`);
 
+    //найти нужный рецепт
     let recipe = getRecipeById(recipeId);
+
+    //вставить сведения о рецепте на страницу
     bindRecipe(recipe);
 }
 
 function getRecipeById(id){
+    //В качестве примера вручную добавлены несколько рецептов.
+    //На практике сведения о рецептах должны извлекаться из базы данных
     const recipe1 = {
         id: 1,
-        name: 'Курица с печеным овощами',
+        name: 'Курица с печеными овощами',
         tags: ['Популярные', 'Для духовки', 'Из курицы'],
         imageUrl: './images/recipe_04.webp',
         stats: {values: [50, 150, 4], labels: ['минут', 'ккал', 'порции']},
@@ -43,7 +48,7 @@ function getRecipeById(id){
         name: 'Рисовые макароны с креветками',
         tags: ['Популярные', 'Морепродукты'],
         imageUrl: './images/recipe_03.webp',
-        stats: {values: [30, 150, 5], labels: ['минут', 'ккал', 'порций']},
+        stats: {values: [30, 100, 5], labels: ['минут', 'ккал', 'порций']},
         ingredients: ['Рисовая лапша, 250 г', 'Креветки, 750 г', 'Морковь, 1 шт', 'Лук репчатый, 1 шт', 'Баклажаны, 300 г', 'Болгарский перец, 200 г', 'Масло растительное, 8 ст.л.', 'Приправы, по вкусу'],
         cooking: [`Довести воду до кипения и посолить. Рисовую лапшу варить в течение 3-4 минут – согласно инструкции на упаковке.`,
                 `Подготовить овощной набор – очистить морковь, лук, болгарский перец. Все овощи нарезать небольшими по размеру кусочками.`,
@@ -76,6 +81,7 @@ function getRecipeById(id){
     recipes.push(recipe3);
     recipes.push(recipe4);
 
+    //найти и вернуть рецепт с требуемым id
     return recipes.find((element) => {
         return element.id == id
     });
@@ -90,38 +96,54 @@ function bindRecipe(recipe){
     bindCookingInfo(recipe.cooking);
 }
 
-function bindName(name){
+function bindName(name){    
     document.title = name;
     let header1 = document.getElementsByClassName("recipe-title")[0];
     header1.innerHTML = name;
 }
 
 function bindTags(tags){
+    //Найти на странице div с классом "tags"
     let tagsDiv = document.getElementsByClassName("tags")[0];
+
     for(let i = 0; i < tags.length; i++){
+        //Программно создать HTML-элемент <p>
         let taskP = document.createElement("p");
+
+        //Вставить содержимое элемента <p>
         taskP.innerHTML = tags[i];
+
+        //Поместить элемент <p> внутрь div-контейнера
         tagsDiv.appendChild(taskP);
     }
 }
 
 function bindImage(imageUrl, name){
+    //Найти на странице img с классом "recipe-img-big"
     let recipeImg = document.getElementsByClassName("recipe-img-big")[0];
+
+    //Программно задать элементу img атрибуты src и alt
     recipeImg.src = imageUrl;
     recipeImg.alt = name;
 }
 
 function bindStats(stats){
     let statsDiv = document.getElementsByClassName("recipe-info")[0];
+    const statIcons = ['./images/clock.svg', './images/burn.svg', './images/dish.svg'];
+    const statAlts = ['Время приготовления', 'Калории', 'Количество порций'];
 
     for(let i = 0; i < stats.values.length; i++){
         let statDiv = document.createElement("div");
         statDiv.setAttribute("class", "recipe-stat");
-        let statSpan = document.createElement("span");
-        statSpan.innerHTML = stats.values[i];
+
+        let statIcon = document.createElement("img");
+        statIcon.src = statIcons[i];
+        statIcon.alt = statAlts[i];
+
         let statP = document.createElement("p");
-        statP.innerHTML = stats.labels[i];
-        statDiv.appendChild(statSpan);
+        statP.innerHTML = `<span>${stats.values[i]}</span> ${stats.labels[i]}`
+
+        statDiv.appendChild(statIcon);
         statDiv.appendChild(statP);
         statsDiv.appendChild(statDiv);
     }
