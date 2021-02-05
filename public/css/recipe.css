@@ -35,7 +35,6 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 0 1rem;
   max-width: 550px;
 }
 
@@ -43,9 +42,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  margin-left: 1rem;
-  margin-bottom: 2rem;
+  width: calc(100% - 2rem);
+  margin: 0 1rem 2rem;
 }
 
 .tags p {
@@ -92,7 +90,7 @@ section {
 .recipe-img-big {
   width: 300px;
   height: 300px;
-  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2));
 }
 
 .ingredient-list {
