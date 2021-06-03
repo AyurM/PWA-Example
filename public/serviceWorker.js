@@ -2,11 +2,15 @@ const staticDevRecipes = "pwa-recipes";
 const assets = [
   "/",
   "/index.html",
-  "/recipe.html",
+  "/recipe.html?id=1",
+  "/recipe.html?id=2",
+  "/recipe.html?id=3",
+  "/recipe.html?id=4",
   "/css/main.css",
   "/css/recipe.css",
   "/css/style.css",
   "/scripts/recipe.js",
+  "/scripts/main.js",
   "/images/background.png",
   "/images/burn.svg",
   "/images/chef.svg",
@@ -18,21 +22,21 @@ const assets = [
   "/images/recipe_02.webp",
   "/images/recipe_03.webp",
   "/images/recipe_04.webp",
-  "/images/recipe_05.webp"
+  "/images/recipe_05.webp",
 ];
 
-self.addEventListener("install", installEvent => {
+self.addEventListener("install", (installEvent) => {
   installEvent.waitUntil(
-    caches.open(staticDevRecipes).then(cache => {
-      cache.addAll(assets)
+    caches.open(staticDevRecipes).then((cache) => {
+      cache.addAll(assets);
     })
-  )
+  );
 });
 
-self.addEventListener("fetch", fetchEvent => {
+self.addEventListener("fetch", (fetchEvent) => {
   fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then(res => {
-      return res || fetch(fetchEvent.request)
+    caches.match(fetchEvent.request).then((res) => {
+      return res || fetch(fetchEvent.request);
     })
-  )
+  );
 });

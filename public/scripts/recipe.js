@@ -12,7 +12,6 @@ window.onload = init;
 function init() {
   //извлечь id рецепта из URL
   let recipeId = window.location.search.substring(1).split("=")[1];
-  //   console.log(window.location.search.substring(1).split("&")[0].split("=")[1]);
 
   //найти нужный рецепт
   let recipe = getRecipeById(recipeId);
